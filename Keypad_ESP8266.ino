@@ -26,4 +26,16 @@ void setup() {
 
 void loop() {
    char key = keypad.getKey(); // Read the key that is pressed
+    if (key != NO_KEY) { // If a key is pressed, add it to the passcode string
+    v_passcode = v_passcode + key; // Append the pressed key to the passcode
+
+    if (key == '*') { // Check if '*' is pressed to reset passcode entry
+      Serial.println("Enter Password");
+      v_passcode = ""; // Reset the passcode
+    }
+
+    if (key == '#') {  // Check if '#' is pressed to validate the passcode
+      Serial.println("Validate the Password");
+    }
+  }
 }
