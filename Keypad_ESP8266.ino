@@ -35,9 +35,11 @@ void setup() {
   pinMode(D6, OUTPUT); // Buzzer
   pinMode(D7, OUTPUT); // Green LED
   pinMode(D8, OUTPUT); // Red LED
+  timer.setInterval(1L, emailsetup); // Set timer to call emailsetup function
 }
-
-void loop() {
+// emailsetup being scheduled to be called repeatedly by the BlynkTimer object.
+// emailsetup() is scheduled to run every 1 millisecond, almost every time loop() runs, timer.run() will execute emailsetup().
+void emailsetup() { 
    char key = keypad.getKey(); // Read the key that is pressed
     if (key != NO_KEY) { // If a key is pressed, add it to the passcode string
     v_passcode = v_passcode + key; // Append the pressed key to the passcode
@@ -81,3 +83,7 @@ void loop() {
     }
     }
   }
+  void loop() {
+  Blynk.run(); // Run Blynk process
+  timer.run(); // checks if it's time to call any function scheduled by the timer.
+}
