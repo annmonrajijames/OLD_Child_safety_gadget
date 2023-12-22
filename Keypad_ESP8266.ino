@@ -14,10 +14,16 @@ byte rowPins[ROWS] = {D1, D2, D3, D4};
 // Connect keypad COL0, COL1, COL2, and COL3 to these pins.
 byte colPins[COLS] = {D5, D6, D7, D8};
 
+Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
+
 void setup() {
   Serial.begin(9600);
 }
 
 void loop() {
-  // Basic loop code
+   char key = keypad.getKey();
+
+  if (key) {
+    Serial.println(key);
+  }
 }
