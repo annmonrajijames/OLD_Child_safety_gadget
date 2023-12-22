@@ -54,21 +54,12 @@ void loop() {
         digitalWrite(D7, LOW);  // Turn off green LED
       } else { // Password is wrong
          Serial.println("Access Denied");
-          digitalWrite(D6,HIGH);
+           for (int i = 0; i < 3; i++) {
+          digitalWrite(D6, HIGH);
           delay(50);
-          digitalWrite(D6,LOW);
+          digitalWrite(D6, LOW);
           delay(50);
-          digitalWrite(D6,HIGH);
-          delay(50);
-          digitalWrite(D6,LOW);
-          delay(100);
-          digitalWrite(D6,HIGH);
-          delay(50);
-          digitalWrite(D6,LOW);
-          delay(50);
-          digitalWrite(D6,HIGH);
-          delay(50);
-          digitalWrite(D6,LOW);
+        }
           digitalWrite(D8,HIGH);
           delay(2000);
           digitalWrite(D8,LOW);
