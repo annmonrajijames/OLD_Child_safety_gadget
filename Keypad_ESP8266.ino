@@ -5,14 +5,15 @@ const byte COLS = 3; // Three columns
 char keys[ROWS][COLS] = {
   {'1','2','3'},
   {'4','5','6'},
-  {'7','8','9'},
+
   {'*','0','#'}
 };
 
-// Connect keypad ROW0, ROW1, ROW2, and ROW3 to these pins.
-byte rowPins[ROWS] = {D1, D2, D3, D4}; 
-// Connect keypad COL0, COL1, COL2, and COL3 to these pins.
-byte colPins[COLS] = {D5, D6, D7, D8};
+// Connect keypad ROW0 to D0, ROW1 to D1, and ROW3 to D2
+//Removed ROW2 because of lack of PINS in microcontroller
+byte rowPins[ROWS] = {D0, D1, D2}; 
+// Connect keypad COL0 to D3, COL1 to D4, and COL3 to D5.
+byte colPins[COLS] = {D3, D4, D5};
 
 Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS ); // Initialize the keypad
 String v_passcode = ""; // String to store the entered passcode
