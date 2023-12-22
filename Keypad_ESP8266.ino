@@ -37,13 +37,41 @@ void loop() {
     if (key == '#') {  // Check if '#' is pressed to validate the passcode
       Serial.println("Validate the Password");
       if (v_passcode == "1234#") { // Password is correct
-        
+        Serial.println("Access Granted");
+        digitalWrite(D6, HIGH); // Turn on buzzer
+        digitalWrite(D7, HIGH); // Turn on green LED
+        delay(3000); // Wait for 3 seconds
+        digitalWrite(D6, LOW);  // Turn off buzzer
+        digitalWrite(D7, LOW);  // Turn off green LED
       } else if (v_passcode == "5050#") { 
       /* Pseudo-password [From outside of the device it will show correct, 
       but it signals as wrong password to parents]*/
-        
+      Serial.println("Pseudo-password entered");
+        digitalWrite(D6, HIGH); // Turn on buzzer
+        digitalWrite(D7, HIGH); // Turn on green LED
+        delay(3000); // Wait for 3 seconds
+        digitalWrite(D6, LOW);  // Turn off buzzer
+        digitalWrite(D7, LOW);  // Turn off green LED
       } else { // Password is wrong
-        
+         Serial.println("Access Denied");
+          digitalWrite(D6,HIGH);
+          delay(50);
+          digitalWrite(D6,LOW);
+          delay(50);
+          digitalWrite(D6,HIGH);
+          delay(50);
+          digitalWrite(D6,LOW);
+          delay(100);
+          digitalWrite(D6,HIGH);
+          delay(50);
+          digitalWrite(D6,LOW);
+          delay(50);
+          digitalWrite(D6,HIGH);
+          delay(50);
+          digitalWrite(D6,LOW);
+          digitalWrite(D8,HIGH);
+          delay(2000);
+          digitalWrite(D8,LOW);
       }
       Serial.println("The entered password is " + v_passcode);
     }
