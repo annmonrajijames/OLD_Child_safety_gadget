@@ -18,6 +18,9 @@ Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
 
 void setup() {
   Serial.begin(9600);
+  pinMode(D6, OUTPUT); // Buzzer
+  pinMode(D7, OUTPUT); // Green LED
+  pinMode(D8, OUTPUT); // Red LED
 }
 
 void loop() {
