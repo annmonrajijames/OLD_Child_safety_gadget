@@ -1,4 +1,3 @@
 # For markdown
 ## Heading2
-![photo_2024-01-13_22-06-57](https://github.com/annmonrajijames/OLD_Child_safety_gadget/assets/84982756/2a81d89b-7f30-493b-86af-5fffa161160e)
-This is the keypad using for child safety gadget
+https://teams.live.com/l/message/19:LHFEcVxRrtNjuJx55EjMxyGKKapqXPnV-H06LqP86fw1@thread.v2/1705240347568?context=%7B%22contextType%22%3A%22chat%22%7D
